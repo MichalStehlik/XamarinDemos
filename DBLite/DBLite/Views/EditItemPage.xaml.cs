@@ -40,7 +40,9 @@ namespace DBLite.Views
             {
                 _vm.Student.ClassroomId = _vm.ClassroomKeys[(int)_vm.SelectedClassroomIndex];
                 await Task.Delay(100);
+
                 await Task.Delay(100);
+
                 await Task.Delay(100);
                 await Navigation.PopModalAsync();
             }

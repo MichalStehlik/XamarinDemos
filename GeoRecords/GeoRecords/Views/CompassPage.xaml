@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:GeoRecords.ViewModels"
+             mc:Ignorable="d"
+             Title="Compass"
+             x:Class="GeoRecords.Views.CompassPage">
+    <ContentPage.BindingContext>
+        <viewmodels:CompassViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding MagneticNorth}" FontSize="Large"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Command="{Binding ToggleCompassCommand}" Text="Toggle" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
