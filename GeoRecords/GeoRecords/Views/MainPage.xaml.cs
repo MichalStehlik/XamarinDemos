@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeoRecords.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace GeoRecords.Views
         public MainPage()
         {
             InitializeComponent();
+            MessagingCenter.Subscribe<ListViewModel, string>(this, "ShowAlert", (sender, msg) => { DisplayAlert("Info", msg, "Ok"); });
+            MessagingCenter.Subscribe<LocationViewModel, string>(this, "ShowAlert", (sender, msg) => { DisplayAlert("Info", msg, "Ok"); });
         }
     }
 }

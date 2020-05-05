@@ -4,12 +4,50 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:viewmodels="clr-namespace:GeoRecords.ViewModels"
+             IsBusy="{Binding IsBusy, Mode=TwoWay}"
+             Title="Stored Locations"
+             x:Name="ListPage"
              x:Class="GeoRecords.Views.ItemsPage">
+    <ContentPage.BindingContext>
+        <viewmodels:ListViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Items"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Locations}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5" VerticalOptions="StartAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Latitude}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" />
+                                <Label Text="{Binding Longitude}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1" />
+                                <Label Text="{Binding Altitude}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="2" />
+                                <Label Text="{Binding Date}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="3" />
+                                <Button Text="Remove" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListViewModel}}, Path=RemoveCommand}" CommandParameter="{Binding Id}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"/>
+                                <Button Text="Map" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListViewModel}}, Path=MapCommand}" CommandParameter="{Binding Id}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Clear" Command="{Binding ClearCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

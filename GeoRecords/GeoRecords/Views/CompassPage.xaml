@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewmodels="clr-namespace:GeoRecords.ViewModels"
+             IsBusy="{Binding IsBusy, Mode=TwoWay}"
              mc:Ignorable="d"
              Title="Compass"
              x:Class="GeoRecords.Views.CompassPage">
@@ -15,7 +16,7 @@
             <Label Text="{Binding MagneticNorth}" FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Command="{Binding ToggleCompassCommand}" Text="Toggle" />
+            <Button Command="{Binding ToggleCompassCommand}" Text="{Binding ButtonText}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

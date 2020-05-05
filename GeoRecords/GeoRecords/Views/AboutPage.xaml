@@ -3,14 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             IsBusy="{Binding IsBusy, Mode=TwoWay}"
              mc:Ignorable="d"
-             Title="{Binding Title}"
+             Title="About"
              x:Class="GeoRecords.Views.AboutPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="About"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" VerticalOptions="StartAndExpand">
+                <StackLayout>
+                    <Label Text="Location Storage" FontSize="Large" TextColor="DarkGreen" HorizontalOptions="Center" Padding="10"/>
+                    <Label Text="The application serves as an example of the basic principles of access to mobile phone sensors during development in the Xamarin environment." 
+                        HorizontalOptions="StartAndExpand" />
+                    <Label Text="It can be used for:" />
+                    <Label Text="- recording locations (Geolocation, Geocoding)" />
+                    <Label Text="- checking directon of phone (Compass)" />
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Source" Clicked="Source_Clicked" />
+                    <Button Text="Xamarin" Clicked="Xamarin_Clicked" />
+                    <Button Text="SPŠSE a VOŠ Liberec" Clicked="School_Clicked"/>
+                </StackLayout>
+                <Image Source="logo2" Scale="0.5" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

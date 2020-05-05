@@ -4,12 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Current Location"
+             xmlns:viewmodels="clr-namespace:GeoRecords.ViewModels"
+             IsBusy="{Binding IsBusy, Mode=TwoWay}"
              x:Class="GeoRecords.Views.LocationPage">
+    <ContentPage.BindingContext>
+        <viewmodels:LocationViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Latitude" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Caption" />
+                <Label Text="{Binding Latitude}" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Large" />
+                <Label Text="Longitude" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Caption" />
+                <Label Text="{Binding Longitude}" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Large" />
+                <Label Text="Altitude" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Caption" />
+                <Label Text="{Binding Altitude}" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Large" />
+                <Button Text="Get Coordinates" Command="{Binding GetCoordinatesCommand}" />
+                <Label Text="Description" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Caption" />
+                <Label Text="{Binding Address}" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Large" />
+                <Label Text="{Binding Locality}" VerticalOptions="Start" Margin="5" HorizontalOptions="CenterAndExpand" FontSize="Large" />
+                <Button Text="Show on Map" Command="{Binding ShowPointOnMapCommand}" />
+                <Button Text="Store" Command="{Binding AddToListCommand}" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

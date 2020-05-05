@@ -3,13 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             IsBusy="{Binding IsBusy, Mode=TwoWay}"
              mc:Ignorable="d"
              x:Class="GeoRecords.Views.MapPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Map"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

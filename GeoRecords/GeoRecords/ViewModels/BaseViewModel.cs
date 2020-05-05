@@ -13,11 +13,11 @@ namespace GeoRecords.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected bool isBusy = false;
-        public bool IsBusy
+        protected bool _isBusy = false;
+        public virtual bool IsBusy
         {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            get { return _isBusy; }
+            set { SetProperty(ref _isBusy, value); }
         }
 
         string title = string.Empty;

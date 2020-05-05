@@ -8,14 +8,14 @@
             Title="Playing with Geo Data"
             x:Class="GeoRecords.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="Compass">
+        <NavigationPage Title="About">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:CompassPage />
+                <views:AboutPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Location">
@@ -38,24 +38,14 @@
                 <views:ItemsPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Map">
+        <NavigationPage Title="Compass">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MapPage />
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="About">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views:AboutPage />
+                <views:CompassPage />
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

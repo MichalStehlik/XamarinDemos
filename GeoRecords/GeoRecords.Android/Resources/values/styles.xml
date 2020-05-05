@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-
+  <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+  </style>
+  
   <style name="MainTheme" parent="MainTheme.Base">
     <item name="windowNoTitle">true</item>
     <item name="windowActionBar">false</item>
@@ -16,10 +19,15 @@
     <item name="android:navigationBarColor">@color/backgroundApp</item>
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
-  <!-- Base theme applied no matter what API -->
-  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-  </style>
 
+  <style name="MainTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splashscreen</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="windowActionBar">true</item>
+  </style>
+  
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="android:colorAccent">@color/backgroundDark</item>
   </style>

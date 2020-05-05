@@ -2,15 +2,17 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GeoRecords.Views;
+using GeoRecords.Services;
 
 namespace GeoRecords
 {
     public partial class App : Application
     {
-        public App()
+        public static AppDbContext Db;
+        public App(string dbPath)
         {
             InitializeComponent();
-
+            Db = new AppDbContext(dbPath);
             MainPage = new MainPage();
         }
 
