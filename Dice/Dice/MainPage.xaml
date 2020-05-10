@@ -9,13 +9,7 @@
     <ContentPage.BindingContext>
         <viewmodel:MainViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Resources>
-        <Style TargetType="{x:Type Button}" x:Key="GoButton">
-            <Setter Property="BackgroundColor" Value="{x:DynamicResource AccentBgColor}" />
-            <Setter Property="TextColor" Value="{x:DynamicResource AccentTextColor}" />
-        </Style>
-    </ContentPage.Resources>
-    <Grid BackgroundColor="{x:DynamicResource BgColor}" >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
@@ -27,7 +21,6 @@
         </Grid.ColumnDefinitions>
         <Label 
             Text="{Binding Number}"
-            TextColor="{x:DynamicResource LabelColor}"
             FontSize="120"            
             HorizontalOptions="Center" 
             VerticalOptions="CenterAndExpand" 
@@ -36,7 +29,6 @@
             Grid.Column="0" />
         <Button 
             Text="Roll"
-            Style="{StaticResource GoButton}"
             Command="{Binding Roll}" 
             Grid.Row="2" 
             Grid.Column="0"
@@ -50,8 +42,8 @@
             Margin="3" 
             HorizontalOptions="Fill" 
             VerticalOptions="Fill"
-            MinimumTrackColor="{x:DynamicResource LabelColor}"
-            MaximumTrackColor="{x:DynamicResource AccentBgColor}"
+            MinimumTrackColor="#9c4dcc"
+            MaximumTrackColor="#6a1b9a"
             />
         <Label 
             Text="{Binding Max}"
@@ -59,7 +51,6 @@
             VerticalOptions="Center"
             Grid.Row="1"
             Grid.Column="1"
-            TextColor="{x:DynamicResource LabelColor}"
             />
         <ScrollView 
             Grid.Row="0"

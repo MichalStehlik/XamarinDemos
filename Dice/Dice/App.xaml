@@ -6,11 +6,5 @@
              mc:Ignorable="d"
              x:Class="Dice.App">
     <Application.Resources>
-        <ResourceDictionary>
-            <Color x:Key="LabelColor">#000000</Color>
-            <Color x:Key="BgColor">#FFFFFF</Color>
-            <Color x:Key="AccentBgColor">#00ff00</Color>
-            <Color x:Key="AccentTextColor">#000000</Color>
-        </ResourceDictionary>
     </Application.Resources>
 </Application>

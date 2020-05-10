@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:viewmodels="clr-namespace:CameraDemo.ViewModels"
+             x:Class="CameraDemo.Views.MainPage">
+    <ContentPage.BindingContext>
+        <viewmodels:PhotoViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="10">
+            <Button Text="Take Photo"  Command="{Binding TakePhotoCommand}"/>
+            <Button Text="Pick Photo" Command="{Binding PickPhotoCommand}"/>
+            <Button Text="Take Video" Command="{Binding TakeVideoCommand}"/>
+            <Button Text="Pick Video" Command="{Binding PickVideoCommand}"/>
+            <Label Text="{Binding FilePath}" HorizontalOptions="Center" />
+            <Image Source="{Binding Image}"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

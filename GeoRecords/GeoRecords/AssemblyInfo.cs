@@ -7,3 +7,8 @@ using Xamarin.Forms.Xaml;
 [assembly: UsesFeature("android.hardware.location", Required = false)]
 [assembly: UsesFeature("android.hardware.location.gps", Required = false)]
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]
+#if DEBUG
+[assembly: Application(Debuggable=true)]
+#else
+[assembly: Application(Debuggable = false)]
+#endif
